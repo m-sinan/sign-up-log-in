@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REGISTERATION</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        .container{
+            display: grid;
+            justify-content: center;
+            align-items: center;
+        }
+        .fname{
+            border-radius: 5px;
+            width:145px
+        }
+        .lname{
+            border-radius: 5px;
+            width: 145px;        
+        }
+        .username{
+            border-radius: 5px;
+            width:300px;
+        }
+        .password{
+            border-radius: 5px;
+            width: 300px;
+        }
+    </style>
+</head>
+<body class="bg-dark">
+    <div class="container-fluide pt-5">
+    <h1 class="text-center fw-bolder mt-5 pt-5 text-white">SIGNUP</h1>
+    <div class="row" style="margin: 0;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="row" style="margin: 0;">
+                        <div class="col-lg-12 d-flex justify-content-center pt-3">
+                            <input type="text" class="fname p-2 mx-1" id="fname" placeholder="Firstname">
+                            <input type="text" class="lname p-2 mx-1" id="lname" placeholder="Lastname">
+                        </div>
+                        <div class="col-lg-12 d-flex justify-content-center pt-3">
+                            <input type="text" class="username p-2" id="use" placeholder="username">
+                        </div>
+                        <div class="col-lg-12 d-flex justify-content-center pt-3">
+                            <input type="password" class="password p-2" id="pas" placeholder="password" > 
+                        </div>
+                        <div class="col-lg-12 mt-3 d-flex justify-content-center">
+                            <input  type="submit" class="btn btn-primary text-center pt-2 px-5" onclick="submit()" value="LOGIN">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script>
+    function submit() {
+    var a = document.getElementById("fname").value;
+    var b = document.getElementById("lname").value;
+    var c = document.getElementById("use").value;
+    var d = document.getElementById("pas").value;
+    const values1 ={
+     firstname: document.getElementById("fname").value,
+     lastname: document.getElementById("lname").value,
+     username: document.getElementById("use").value,
+     password: document.getElementById("pas").value,
+    }
+    if (a>"0" && b>"0" && c>"0" && d>"0") {
+        const queryParams = new URLSearchParams(values1).toString();
+        window.location.href="PAGES/second.html?"+queryParams;
+    } else {
+        alert("please set ``USERNMAE and PASSWORD`` ");
+    }
+}   
+    </script>
+</body>
+</html>
